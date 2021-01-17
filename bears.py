@@ -18,16 +18,17 @@ def bears(n: int):
     if n % 5 != 0 and n % 3 != 0 and n % 4 != 0 and n % 2 != 0:
         return False
     
+    # Base Case 3
+    if n < 42:
+        return False
+
     else: 
         # If any are true, thus the case is case
         a = False
         b = False
         c = False
         
-        # Reduction Case
-        if n < 42:
-            return False
-        
+        # Reduction Case     
         if n % 2 == 0:
             a = bears(n/2)
         
