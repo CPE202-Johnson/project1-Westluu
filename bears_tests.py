@@ -2,17 +2,31 @@ import unittest
 from bears import *
 
 class TestAssign1(unittest.TestCase):
-    def test_bear_01(self):
-        self.assertTrue(bears(250))
+    """ Test if the Bears function checks if it's possible to get 42
+        with set conditions"""
+    
+    def test_bears(self):
+        
+        # Testing if not possible to get 42
+        self.assertFalse(bears(100))
 
-    def test_bear_02(self):
-        self.assertTrue(bears(42))
-
-    def test_bear_03(self):
         self.assertFalse(bears(53))
 
-    def test_bear_04(self):
         self.assertFalse(bears(41))
+
+        self.assertFalse(bears(177))
+
+        
+        # Testing if possible to get 42
+        self.assertTrue(bears(250))
+
+        self.assertTrue(bears(42))
+
+        self.assertTrue(bears(84))
+
+        self.assertTrue(bears(168))
+
+    
 
 if __name__ == "__main__":
     unittest.main()
