@@ -32,7 +32,7 @@ def bears(n: int):
         if n % 2 == 0:
             a = bears(n/2)
         
-        if n % 3 == 0 or n % 4 == 0:
+        if (n % 3 == 0 or n % 4 == 0) and a is not True:
             last_two = n % 100
             first = last_two // 10
             last = last_two % 10
@@ -40,11 +40,12 @@ def bears(n: int):
             if mult != 0:
                 b = bears(n - mult)
         
-        if n % 5 == 0:
+        if n % 5 == 0 and a is not True and b is not True:
             c = bears(n - 42)
 
         # At the end of the possiblities, if any of the branches are true, the case is true
-        if a == True or b == True or c == True:
+        if a is True or b is True or c is True:
             return True
+        
         else:
             return False
