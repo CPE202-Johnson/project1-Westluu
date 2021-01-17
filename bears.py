@@ -45,3 +45,5 @@ def bears(n: int):
         # At the end of the possiblities, if any of the branches are true, the case is true
         if a == True or b == True or c == True:
             return True
+        else:
+            return False
