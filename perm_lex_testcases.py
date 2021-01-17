@@ -8,6 +8,10 @@ class TestAssign1(unittest.TestCase):
     """
 
     def test_perm_gen_lex(self):
+        self.assertEqual(perm_lex.perm_gen_lex(''), [])
+
+        self.assertEqual(perm_lex.perm_gen_lex('a'), ['a'])
+        
         self.assertEqual(perm_lex.perm_gen_lex('ab'),['ab','ba'])
 
         self.assertEqual(perm_lex.perm_gen_lex('bc'), ['bc', 'cb'])
@@ -24,7 +28,7 @@ class TestAssign1(unittest.TestCase):
                                                          'cbda', 'cdab', 'cdba', 'dabc', 'dacb',
                                                          'dbac', 'dbca', 'dcab', 'dcba'])
         
-        
-                             
+
+
 if __name__ == "__main__":
         unittest.main()
